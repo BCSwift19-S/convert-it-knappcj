@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             return
             }
         let outputValue = formulasArray[formulaPicker.selectedRow(inComponent: 0)].formula(inputValue)
-        let formatString = (decimalSegment.selectedSegmentIndex < decimalSegment.numberOfSegments - 1 ? "\(decimalSegment.selectedSegmentIndex+1)f" : "%f")
+        let formatString = (decimalSegment.selectedSegmentIndex < decimalSegment.numberOfSegments-1 ? "%.\(decimalSegment.selectedSegmentIndex+1)f" : "%f")
         let outputString = String(format: formatString, outputValue)
             resultsLabel.text = "\(inputValue) \(fromUnits) = \(outputString) \(toUnits)"
         }
